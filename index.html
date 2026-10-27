@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>陈梦琪 · 产品运营 | 个人作品集</title>
+<meta name="description" content="陈梦琪，网络空间安全专业本科，求职意向：产品运营。项目统筹、系统验证与文档撰写实战经验。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#faf8f4;
+  --paper-deep:#f3efe7;
+  --ink:#1c1a17;
+  --ink-soft:#55504a;
+  --ink-faint:#8a847c;
+  --line:#e2dcd2;
+  --accent:#b03a2e;
+  --accent-soft:#f5e6e2;
+  --gold:#a8832c;
+  --radius:18px;
+  --serif:'Noto Serif SC', 'Songti SC', serif;
+  --sans:'Noto Sans SC', 'PingFang SC', sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-weight:400;
+  line-height:1.8;
+  letter-spacing:.02em;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+::selection{background:var(--accent);color:#fff}
+
+/* ---------- 背景纹理 ---------- */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:radial-gradient(rgba(28,26,23,.04) 1px, transparent 1px);
+  background-size:26px 26px;
+}
+
+/* ---------- 导航 ---------- */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:18px clamp(20px,5vw,64px);
+  transition:background .35s ease, box-shadow .35s ease, padding .35s ease;
+}
+nav.scrolled{
+  background:rgba(250,248,244,.86);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  box-shadow:0 1px 0 var(--line);
+  padding:12px clamp(20px,5vw,64px);
+}
+.nav-logo{
+  font-family:var(--serif);font-weight:900;font-size:20px;
+  display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);
+}
+.nav-logo .seal{
+  width:30px;height:30px;background:var(--accent);color:#fff;border-radius:6px;
+  display:grid;place-items:center;font-size:14px;font-weight:700;letter-spacing:0;
+  box-shadow:0 4px 12px rgba(176,58,46,.3);
+}
+.nav-links{display:flex;gap:clamp(14px,2.5vw,34px);list-style:none}
+.nav-links a{
+  text-decoration:none;color:var(--ink-soft);font-size:14px;font-weight:500;
+  position:relative;padding:4px 0;transition:color .25s;
+}
+.nav-links a::after{
+  content:"";position:absolute;left:0;bottom:0;width:0;height:2px;
+  background:var(--accent);border-radius:2px;transition:width .3s ease;
+}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a:hover::after{width:100%}
+@media(max-width:720px){.nav-links{display:none}}
+
+/* ---------- Hero ---------- */
+.hero{
+  min-height:100svh;display:flex;align-items:center;position:relative;z-index:1;
+  padding:120px clamp(20px,6vw,80px) 60px;
+}
+.hero-grid{
+  width:100%;max-width:1180px;margin:0 auto;
+  display:grid;grid-template-columns:1.35fr .9fr;gap:clamp(32px,6vw,90px);align-items:center;
+}
+@media(max-width:880px){.hero-grid{grid-template-columns:1fr}}
+.kicker{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:13px;font-weight:500;letter-spacing:.28em;color:var(--accent);
+  text-transform:uppercase;margin-bottom:26px;
+}
+.kicker::before{content:"";width:36px;height:1px;background:var(--accent)}
+.hero h1{
+  font-family:var(--serif);font-weight:900;
+  font-size:clamp(44px,8vw,88px);line-height:1.15;letter-spacing:.04em;
+  margin-bottom:8px;
+}
+.hero h1 .dot{color:var(--accent)}
+.hero .en-name{
+  font-family:var(--sans);font-size:clamp(13px,1.4vw,16px);font-weight:300;
+  letter-spacing:.5em;color:var(--ink-faint);margin-bottom:26px;text-transform:uppercase;
+}
+.hero-title-tag{
+  display:inline-block;font-family:var(--serif);font-size:clamp(16px,2vw,20px);font-weight:600;
+  padding:8px 20px;border:1px solid var(--ink);border-radius:999px;margin-bottom:26px;
+  background:#fff;
+}
+.hero-desc{max-width:520px;color:var(--ink-soft);font-size:15.5px;margin-bottom:36px}
+.hero-desc strong{color:var(--ink)}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 28px;border-radius:999px;font-size:14px;font-weight:500;
+  text-decoration:none;transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+.btn-primary{background:var(--ink);color:#fff;box-shadow:0 10px 24px rgba(28,26,23,.18)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 32px rgba(28,26,23,.24);background:var(--accent)}
+.btn-ghost{border:1px solid var(--line);color:var(--ink);background:#fff}
+.btn-ghost:hover{transform:translateY(-3px);border-color:var(--ink)}
+
+/* 右侧名片卡 */
+.hero-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:38px 34px;position:relative;
+  box-shadow:0 24px 60px rgba(28,26,23,.08);
+}
+.hero-card::before{
+  content:"";position:absolute;top:0;left:34px;right:34px;height:4px;
+  background:linear-gradient(90deg,var(--accent),var(--gold));border-radius:0 0 4px 4px;
+}
+.hero-card h3{
+  font-family:var(--serif);font-size:15px;font-weight:700;letter-spacing:.2em;
+  color:var(--ink-faint);margin-bottom:20px;display:flex;align-items:center;gap:10px;
+}
+.hero-card h3::after{content:"";flex:1;height:1px;background:var(--line)}
+.info-row{display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line);font-size:14px}
+.info-row:last-child{border-bottom:none}
+.info-row .k{color:var(--ink-faint);flex-shrink:0;width:74px}
+.info-row .v{color:var(--ink);font-weight:500}
+.badge-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.badge{
+  font-size:12px;font-weight:500;padding:5px 12px;border-radius:999px;
+  background:var(--paper-deep);color:var(--ink-soft);border:1px solid var(--line);
+}
+.badge.hot{background:var(--accent-soft);color:var(--accent);border-color:#ecd0c9}
+
+/* 竖排装饰 */
+.v-text{
+  position:absolute;right:clamp(10px,3vw,40px);top:50%;transform:translateY(-50%);
+  writing-mode:vertical-rl;font-family:var(--serif);font-size:13px;letter-spacing:.6em;
+  color:var(--ink-faint);opacity:.7;user-select:none;
+}
+@media(max-width:1100px){.v-text{display:none}}
+
+/* 跑马灯 */
+.marquee{
+  background:var(--ink);color:var(--paper);overflow:hidden;padding:14px 0;
+  position:relative;z-index:1;
+}
+.marquee-track{display:flex;gap:48px;width:max-content;animation:scroll 28s linear infinite}
+.marquee span{
+  font-family:var(--serif);font-size:14px;letter-spacing:.3em;white-space:nowrap;
+  display:flex;align-items:center;gap:48px;
+}
+.marquee i{font-style:normal;color:var(--accent);filter:brightness(1.5)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* ---------- 通用 section ---------- */
+section{position:relative;z-index:1;padding:clamp(70px,10vw,120px) clamp(20px,6vw,80px)}
+.wrap{max-width:1180px;margin:0 auto}
+.sec-head{margin-bottom:clamp(36px,5vw,60px)}
+.sec-head .no{
+  font-family:var(--serif);font-size:13px;font-weight:700;letter-spacing:.3em;
+  color:var(--accent);margin-bottom:10px;display:block;
+}
+.sec-head h2{
+  font-family:var(--serif);font-weight:900;font-size:clamp(28px,4vw,44px);letter-spacing:.06em;
+  display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;
+}
+.sec-head h2 .en{
+  font-family:var(--sans);font-weight:300;font-size:13px;letter-spacing:.4em;
+  color:var(--ink-faint);text-transform:uppercase;
+}
+.sec-head p{margin-top:14px;color:var(--ink-soft);font-size:15px;max-width:640px}
+
+/* reveal 动画 */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- 关于我 ---------- */
+.about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:880px){.about-grid{grid-template-columns:1fr}}
+.about-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px 28px;transition:transform .3s ease, box-shadow .3s ease;
+}
+.about-card:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(28,26,23,.09)}
+.about-card .num{
+  font-family:var(--serif);font-size:34px;font-weight:900;color:var(--accent);line-height:1;
+}
+.about-card .num small{font-size:16px;color:var(--gold);margin-left:2px}
+.about-card h4{font-family:var(--serif);font-size:17px;font-weight:700;margin:14px 0 8px}
+.about-card p{font-size:14px;color:var(--ink-soft)}
+.about-quote{
+  margin-top:36px;padding:30px 34px;border-left:3px solid var(--accent);
+  background:linear-gradient(90deg,var(--accent-soft),transparent 70%);
+  border-radius:0 var(--radius) var(--radius) 0;font-family:var(--serif);
+  font-size:clamp(15px,1.8vw,18px);font-weight:500;line-height:2;
+}
+
+/* ---------- 时间线 ---------- */
+.timeline{position:relative;padding-left:34px}
+.timeline::before{
+  content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;
+  background:linear-gradient(var(--accent),var(--gold),var(--line));border-radius:2px;
+}
+.t-item{position:relative;padding-bottom:42px}
+.t-item:last-child{padding-bottom:0}
+.t-item::before{
+  content:"";position:absolute;left:-32px;top:8px;width:14px;height:14px;border-radius:50%;
+  background:var(--paper);border:3px solid var(--accent);
+}
+.t-item .date{
+  font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--accent);
+  font-family:var(--serif);
+}
+.t-item h4{font-family:var(--serif);font-size:clamp(18px,2.2vw,22px);font-weight:700;margin:6px 0 2px}
+.t-item .role{
+  display:inline-block;font-size:13px;color:var(--ink-soft);margin-bottom:12px;
+  padding:3px 12px;background:var(--paper-deep);border-radius:999px;border:1px solid var(--line);
+}
+.t-item ul{list-style:none;display:grid;gap:8px}
+.t-item li{
+  font-size:14.5px;color:var(--ink-soft);padding-left:20px;position:relative;
+}
+.t-item li::before{
+  content:"";position:absolute;left:2px;top:.72em;width:8px;height:2px;background:var(--gold);border-radius:2px;
+}
+.t-item li strong{color:var(--ink)}
+
+/* 两栏布局 */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,72px)}
+@media(max-width:880px){.split{grid-template-columns:1fr}}
+
+/* ---------- 项目卡 ---------- */
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:980px){.proj-grid{grid-template-columns:1fr}}
+.proj-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:32px 28px;display:flex;flex-direction:column;position:relative;overflow:hidden;
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.proj-card:hover{transform:translateY(-8px);box-shadow:0 26px 54px rgba(28,26,23,.1)}
+.proj-card::after{
+  content:attr(data-idx);position:absolute;right:14px;top:2px;
+  font-family:var(--serif);font-size:88px;font-weight:900;color:var(--paper-deep);
+  line-height:1;z-index:0;transition:color .3s;
+}
+.proj-card:hover::after{color:var(--accent-soft)}
+.proj-card>*{position:relative;z-index:1}
+.proj-card{cursor:pointer}
+.proj-more{
+  margin-top:18px;align-self:flex-start;display:inline-flex;align-items:center;gap:6px;
+  font-size:13px;font-weight:700;color:var(--accent);font-family:var(--serif);letter-spacing:.1em;
+}
+.proj-more::after{content:"→";transition:transform .3s ease}
+.proj-card:hover .proj-more::after{transform:translateX(6px)}
+
+/* ---------- 项目详情弹窗 ---------- */
+.modal{
+  position:fixed;inset:0;z-index:200;display:none;
+}
+.modal.open{display:block}
+.modal-backdrop{
+  position:absolute;inset:0;background:rgba(28,26,23,.5);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  opacity:0;transition:opacity .35s ease;
+}
+.modal.open .modal-backdrop{opacity:1}
+.modal-panel{
+  position:absolute;top:0;right:0;bottom:0;width:min(880px,100%);
+  background:var(--paper);overflow-y:auto;overscroll-behavior:contain;
+  transform:translateX(60px);opacity:0;transition:transform .45s cubic-bezier(.22,1,.36,1),opacity .35s ease;
+  box-shadow:-30px 0 80px rgba(0,0,0,.2);
+  padding:clamp(28px,5vw,60px) clamp(20px,5vw,56px) 80px;
+}
+.modal.open .modal-panel{transform:none;opacity:1}
+.modal-close{
+  position:sticky;top:0;float:right;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--line);background:#fff;font-size:18px;cursor:pointer;
+  display:grid;place-items:center;color:var(--ink);z-index:5;
+  transition:transform .3s ease,background .3s ease;
+}
+.modal-close:hover{transform:rotate(90deg);background:var(--accent);color:#fff}
+.m-kicker{font-size:13px;font-weight:700;letter-spacing:.3em;color:var(--accent);font-family:var(--serif);margin-bottom:10px}
+.modal-panel h3{font-family:var(--serif);font-weight:900;font-size:clamp(26px,3.5vw,36px);margin-bottom:6px}
+.m-date{color:var(--ink-faint);font-size:14px;font-family:var(--serif);margin-bottom:28px}
+.m-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
+.m-block{margin-bottom:36px}
+.m-block h5{
+  font-family:var(--serif);font-size:16px;font-weight:700;letter-spacing:.15em;
+  display:flex;align-items:center;gap:12px;margin-bottom:16px;
+}
+.m-block h5::before{content:"";width:6px;height:20px;background:var(--accent);border-radius:3px}
+.m-block h5::after{content:"";flex:1;height:1px;background:var(--line)}
+.m-block p{font-size:14.5px;color:var(--ink-soft)}
+.m-block ul{list-style:none;display:grid;gap:10px;margin-top:6px}
+.m-block li{font-size:14.5px;color:var(--ink-soft);padding-left:22px;position:relative}
+.m-block li::before{
+  content:"";position:absolute;left:4px;top:.72em;width:8px;height:8px;
+  border-radius:2px;background:var(--accent-soft);border:2px solid var(--accent);
+  transform:rotate(45deg) translateY(-50%);
+}
+.m-duo{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:640px){.m-duo{grid-template-columns:1fr}}
+.m-mini{
+  background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 22px;
+}
+.m-mini .mk{font-size:12px;color:var(--ink-faint);letter-spacing:.15em;margin-bottom:4px}
+.m-mini .mv{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--ink)}
+.m-mini .mv em{font-style:normal;color:var(--accent);font-size:14px;margin-left:4px}
+
+/* 界面预览 */
+.mock-wrap{
+  border:1px solid var(--line);border-radius:var(--radius);background:#fff;
+  padding:clamp(16px,3vw,30px);overflow:hidden;
+}
+.mock-label{
+  display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;
+  letter-spacing:.2em;color:var(--ink-faint);margin-bottom:16px;font-family:var(--serif);
+}
+.mock-label::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.mock-grid{display:flex;gap:22px;justify-content:center;flex-wrap:wrap}
+
+/* 手机框 */
+.phone{
+  width:230px;flex-shrink:0;background:#fff;border:8px solid var(--ink);border-radius:32px;
+  overflow:hidden;box-shadow:0 20px 44px rgba(28,26,23,.16);font-size:11px;line-height:1.5;
+  display:flex;flex-direction:column;
+}
+.phone .p-status{
+  display:flex;justify-content:space-between;padding:6px 14px 2px;
+  font-size:9px;color:var(--ink);font-weight:700;background:#fff;
+}
+.phone .p-head{padding:8px 14px;border-bottom:1px solid var(--paper-deep)}
+.phone .p-head b{font-family:var(--serif);font-size:13px}
+.phone .p-body{flex:1;padding:10px 12px;background:var(--paper);display:flex;flex-direction:column;gap:8px}
+.phone .p-search{
+  background:#fff;border-radius:10px;padding:8px 10px;display:flex;flex-direction:column;gap:4px;
+  box-shadow:0 2px 8px rgba(28,26,23,.06);font-size:10px;
+}
+.phone .p-search .row{display:flex;align-items:center;gap:6px}
+.phone .p-search .dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.phone .p-search .swap{align-self:center;font-size:10px;color:var(--ink-faint)}
+.phone .p-search .btn-s{
+  background:var(--accent);color:#fff;text-align:center;border-radius:8px;
+  padding:5px;font-weight:700;font-size:10px;
+}
+.ride-card{
+  background:#fff;border-radius:10px;padding:8px 10px;display:flex;gap:8px;align-items:center;
+  box-shadow:0 2px 8px rgba(28,26,23,.05);
+}
+.ride-card .av{
+  width:28px;height:28px;border-radius:50%;display:grid;place-items:center;flex-shrink:0;
+  font-size:10px;font-weight:700;color:#fff;
+}
+.ride-card .rc-info{flex:1;min-width:0}
+.ride-card .rc-info b{font-size:10px;display:block}
+.ride-card .rc-info span{font-size:9px;color:var(--ink-faint)}
+.ride-card .rc-price{font-family:var(--serif);color:var(--accent);font-weight:700;font-size:12px}
+.phone .p-tabs{
+  display:flex;border-top:1px solid var(--paper-deep);background:#fff;padding:5px 0 8px;
+}
+.phone .p-tabs div{flex:1;text-align:center;font-size:9px;color:var(--ink-faint)}
+.phone .p-tabs div.on{color:var(--accent);font-weight:700}
+.phone .p-tabs .ic{font-size:13px;display:block;margin-bottom:1px}
+
+/* 后台系统框 */
+.panel{
+  flex:1;min-width:260px;max-width:420px;border:1px solid var(--line);border-radius:14px;
+  overflow:hidden;box-shadow:0 16px 40px rgba(28,26,23,.1);font-size:11px;background:#fff;
+  display:flex;flex-direction:column;
+}
+.panel.dark{background:#22252b;color:#e8e6e1;border-color:#33363d}
+.panel .pl-top{
+  display:flex;align-items:center;gap:6px;padding:8px 12px;
+  background:var(--paper-deep);font-weight:700;font-size:10.5px;
+}
+.panel.dark .pl-top{background:#2b2e35;color:#e8e6e1}
+.panel .pl-top .dots{display:flex;gap:4px}
+.panel .pl-top .dots i{width:8px;height:8px;border-radius:50%;display:block}
+.panel .pl-body{display:flex;flex:1;min-height:0}
+.panel .pl-side{
+  width:74px;flex-shrink:0;padding:10px 6px;display:flex;flex-direction:column;gap:4px;
+  background:var(--paper-deep);
+}
+.panel.dark .pl-side{background:#2b2e35}
+.panel .pl-side span{
+  padding:5px 7px;border-radius:7px;font-size:9.5px;color:var(--ink-faint);white-space:nowrap;
+}
+.panel.dark .pl-side span{color:#9a97a1}
+.panel .pl-side span.on{background:var(--accent);color:#fff;font-weight:700}
+.panel .pl-main{flex:1;padding:12px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.pl-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.pl-stat{border-radius:9px;padding:7px 8px;background:var(--paper);border:1px solid var(--line)}
+.panel.dark .pl-stat{background:#2b2e35;border-color:#3a3d45}
+.pl-stat b{font-family:var(--serif);font-size:14px;display:block;line-height:1.3}
+.pl-stat span{font-size:8.5px;color:var(--ink-faint)}
+.panel.dark .pl-stat span{color:#9a97a1}
+.pl-table{border:1px solid var(--line);border-radius:9px;overflow:hidden}
+.panel.dark .pl-table{border-color:#3a3d45}
+.pl-table .tr{
+  display:grid;grid-template-columns:1fr 1fr 1fr;padding:5px 9px;font-size:9.5px;
+  border-bottom:1px solid var(--line);align-items:center;
+}
+.panel.dark .pl-table .tr{border-color:#3a3d45}
+.pl-table .tr:last-child{border-bottom:none}
+.pl-table .tr.hd{background:var(--paper);font-weight:700}
+.panel.dark .pl-table .tr.hd{background:#2b2e35}
+.pl-table .ok{color:#3d8b4f;font-weight:700}
+.pl-table .warn{color:#c07b1d;font-weight:700}
+.pl-table .bad{color:var(--accent);font-weight:700}
+.pl-map{
+  flex:1;min-height:110px;border-radius:9px;position:relative;overflow:hidden;
+  background:#e9efe6;border:1px solid var(--line);
+}
+.pl-map .road{position:absolute;background:#fff;opacity:.9}
+.pl-map svg{position:absolute;inset:0;width:100%;height:100%}
+.pl-alert{
+  display:flex;gap:6px;align-items:center;padding:5px 8px;border-radius:8px;font-size:9px;
+  background:var(--accent-soft);color:var(--accent);font-weight:700;
+}
+.panel.dark .pl-alert{background:rgba(176,58,46,.15)}
+.pl-rows{display:flex;flex-direction:column;gap:5px}
+.pl-row{
+  display:flex;justify-content:space-between;align-items:center;padding:5px 9px;
+  border-radius:8px;background:var(--paper);border:1px solid var(--line);font-size:9.5px;
+}
+.panel.dark .pl-row{background:#2b2e35;border-color:#3a3d45}
+.pl-pill{font-size:8px;padding:2px 7px;border-radius:99px;font-weight:700}
+.pl-pill.g{background:#e3f0e5;color:#3d8b4f}
+.pl-pill.o{background:#f7ecd8;color:#c07b1d}
+.pl-pill.r{background:var(--accent-soft);color:var(--accent)}
+
+body.modal-open{overflow:hidden}
+
+/* ---------- 真实截图展示 ---------- */
+.shot-row{
+  display:flex;gap:16px;overflow-x:auto;padding:6px 2px 14px;
+  scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;
+}
+.shot-row::-webkit-scrollbar{height:6px}
+.shot-row::-webkit-scrollbar-thumb{background:var(--line);border-radius:6px}
+.shot{
+  flex-shrink:0;scroll-snap-align:center;text-align:center;
+}
+.shot img{
+  height:540px;border-radius:20px;border:1px solid var(--line);
+  box-shadow:0 16px 40px rgba(28,26,23,.14);display:block;
+  transition:transform .3s ease;
+}
+.shot img:hover{transform:translateY(-4px)}
+.shot .cap{
+  margin-top:10px;font-size:12px;color:var(--ink-faint);letter-spacing:.12em;font-family:var(--serif);
+}
+.shot.wide{width:100%}
+.shot.wide img{width:100%;height:auto;border-radius:14px}
+.proj-tag{
+  align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.15em;
+  padding:4px 12px;border-radius:6px;margin-bottom:16px;
+}
+.tag-lead{background:var(--accent-soft);color:var(--accent)}
+.tag-solo{background:#e8eef7;color:#3a5b8c}
+.tag-core{background:#f4eeda;color:var(--gold)}
+.proj-card h4{font-family:var(--serif);font-size:20px;font-weight:700;margin-bottom:4px}
+.proj-card .p-date{font-size:13px;color:var(--ink-faint);margin-bottom:14px;font-family:var(--serif)}
+.proj-card p{font-size:14px;color:var(--ink-soft);flex:1}
+.proj-card .p-foot{
+  margin-top:20px;padding-top:16px;border-top:1px dashed var(--line);
+  display:flex;gap:8px;flex-wrap:wrap;
+}
+.chip{font-size:12px;padding:4px 10px;border-radius:999px;background:var(--paper-deep);color:var(--ink-soft)}
+
+/* ---------- 技能 ---------- */
+.skill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+@media(max-width:880px){.skill-grid{grid-template-columns:1fr}}
+.skill-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 28px;
+}
+.skill-card h4{
+  font-family:var(--serif);font-size:16px;font-weight:700;letter-spacing:.1em;
+  margin-bottom:20px;display:flex;align-items:center;gap:10px;
+}
+.skill-card h4 .ic{
+  width:34px;height:34px;border-radius:10px;display:grid;place-items:center;
+  background:var(--accent-soft);color:var(--accent);font-size:15px;
+}
+.bar{margin-bottom:16px}
+.bar .bar-head{display:flex;justify-content:space-between;font-size:13.5px;margin-bottom:6px}
+.bar .bar-head b{font-weight:500}
+.bar .bar-head span{color:var(--ink-faint);font-family:var(--serif);font-size:12px}
+.bar .track{height:6px;background:var(--paper-deep);border-radius:6px;overflow:hidden}
+.bar .fill{
+  height:100%;border-radius:6px;width:0;
+  background:linear-gradient(90deg,var(--gold),var(--accent));
+  transition:width 1.2s cubic-bezier(.22,1,.36,1);
+}
+.certs{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.cert{
+  display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:500;
+  padding:9px 16px;border:1px solid var(--line);border-radius:10px;background:#fff;
+}
+.cert::before{content:"✓";color:var(--accent);font-weight:700}
+
+/* ---------- 荣誉 ---------- */
+.honor-list{display:grid;gap:0;border-top:1px solid var(--line)}
+.honor{
+  display:grid;grid-template-columns:110px 1fr auto;gap:18px;align-items:baseline;
+  padding:20px 10px;border-bottom:1px solid var(--line);
+  transition:background .25s ease, padding-left .25s ease;cursor:default;
+}
+.honor:hover{background:#fff;padding-left:20px}
+.honor .h-date{font-family:var(--serif);font-weight:700;color:var(--accent);font-size:14px}
+.honor .h-name{font-size:15px;font-weight:500}
+.honor .h-lv{
+  font-size:12px;font-weight:700;padding:3px 12px;border-radius:999px;letter-spacing:.08em;
+}
+.lv-national{background:#f4eeda;color:var(--gold)}
+.lv-prov{background:var(--accent-soft);color:var(--accent)}
+.lv-school{background:#e8eef7;color:#3a5b8c}
+@media(max-width:640px){.honor{grid-template-columns:1fr;gap:4px}.honor .h-lv{justify-self:start}}
+
+/* ---------- 联系 ---------- */
+.contact{
+  background:var(--ink);color:var(--paper);border-radius:calc(var(--radius) * 1.4);
+  padding:clamp(44px,7vw,80px);position:relative;overflow:hidden;
+}
+.contact::before{
+  content:"联";position:absolute;right:-30px;bottom:-70px;
+  font-family:var(--serif);font-size:300px;font-weight:900;color:rgba(250,248,244,.04);
+  line-height:1;pointer-events:none;
+}
+.contact h2{font-family:var(--serif);font-weight:900;font-size:clamp(28px,4vw,46px);margin-bottom:12px}
+.contact h2 em{font-style:normal;color:#e8a598}
+.contact p{color:rgba(250,248,244,.65);max-width:560px;margin-bottom:34px;font-size:15px}
+.c-links{display:flex;flex-wrap:wrap;gap:14px}
+.c-link{
+  display:inline-flex;align-items:center;gap:10px;text-decoration:none;
+  padding:13px 24px;border-radius:999px;font-size:14px;font-weight:500;
+  background:rgba(250,248,244,.08);color:var(--paper);border:1px solid rgba(250,248,244,.18);
+  transition:background .25s ease, transform .25s ease;
+}
+.c-link:hover{background:var(--accent);transform:translateY(-3px)}
+.c-link b{font-weight:700}
+
+footer{
+  padding:32px clamp(20px,6vw,80px);text-align:center;color:var(--ink-faint);
+  font-size:13px;position:relative;z-index:1;
+}
+footer span{font-family:var(--serif)}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="nav-logo" href="#top"><span class="seal">琪</span>陈梦琪</a>
+  <ul class="nav-links">
+    <li><a href="#about">关于我</a></li>
+    <li><a href="#work">实习经历</a></li>
+    <li><a href="#projects">项目经验</a></li>
+    <li><a href="#skills">技能证书</a></li>
+    <li><a href="#honors">荣誉奖励</a></li>
+    <li><a href="#contact">联系我</a></li>
+  </ul>
+</nav>
+
+<div class="v-text">严谨务实 · 快速学习 · 团队协作</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="hero-grid">
+    <div>
+      <span class="kicker">Product Operations · Portfolio 2026</span>
+      <h1>陈梦琪<span class="dot">。</span></h1>
+      <div class="en-name">CHEN MENGQI</div>
+      <div class="hero-title-tag">求职意向：产品运营</div>
+      <p class="hero-desc">
+        福建理工大学<strong>网络空间安全</strong>专业应届本科生，中共党员。
+        拥有<strong>项目统筹、系统开发验证与技术文档撰写</strong>的实战经验，
+        现任杭州默安科技产品技术运营实习生，参与政企安全项目支撑，
+        擅长梳理业务需求、跟进问题闭环。
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#projects">查看项目经验 ↓</a>
+        <a class="btn btn-ghost" href="#contact">联系我</a>
+      </div>
+    </div>
+    <aside class="hero-card reveal">
+      <h3>个人档案</h3>
+      <div class="info-row"><span class="k">出生年月</span><span class="v">2004 年 10 月</span></div>
+      <div class="info-row"><span class="k">现居城市</span><span class="v">福建省 · 福州市</span></div>
+      <div class="info-row"><span class="k">教育背景</span><span class="v">福建理工大学 · 本科（2023–2027）</span></div>
+      <div class="info-row"><span class="k">电子邮箱</span><span class="v">2817626024@qq.com</span></div>
+      <div class="info-row"><span class="k">联系电话</span><span class="v">157 5972 6519</span></div>
+      <div class="badge-row">
+        <span class="badge hot">中共党员</span>
+        <span class="badge">英语四级</span>
+        <span class="badge">C1 驾驶证</span>
+        <span class="badge">3 项软件著作权</span>
+      </div>
+    </aside>
+  </div>
+</header>
+
+<!-- ============ 跑马灯 ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>需求梳理 <i>✦</i> 产品验证 <i>✦</i> 测试闭环 <i>✦</i> 文档撰写 <i>✦</i> 数据分析 <i>✦</i> 内容创作 <i>✦</i> 竞品调研 <i>✦</i> 项目统筹 <i>✦</i></span>
+    <span>需求梳理 <i>✦</i> 产品验证 <i>✦</i> 测试闭环 <i>✦</i> 文档撰写 <i>✦</i> 数据分析 <i>✦</i> 内容创作 <i>✦</i> 竞品调研 <i>✦</i> 项目统筹 <i>✦</i></span>
+  </div>
+</div>
+
+<!-- ============ 关于我 ============ -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="no">01 / ABOUT</span>
+      <h2>关于我 <span class="en">About Me</span></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-card reveal">
+        <div class="num">1<small>年+</small></div>
+        <h4>安全项目实战</h4>
+        <p>深度参与医院政企安全项目，执行 IAST/SCA 月度安全巡检，完成风险核验与缺陷分级闭环。</p>
+      </div>
+      <div class="about-card reveal" style="transition-delay:.12s">
+        <div class="num">3<small>项</small></div>
+        <h4>计算机软件著作权</h4>
+        <p>作为轨迹安全监护系统负责人，统筹版本管理与功能/安全测试，项目最终获 3 项软著。</p>
+      </div>
+      <div class="about-card reveal" style="transition-delay:.24s">
+        <div class="num">6<small>项+</small></div>
+        <h4>国家级 / 省级奖项</h4>
+        <p>中国国际"互联网+"国赛三等奖、智能机器人创意大赛华东赛区二等奖、国家级大创项目负责人等。</p>
+      </div>
+    </div>
+    <blockquote class="about-quote reveal">
+      "做事严谨务实，具备良好的规则意识与团队协作能力；学习接受能力强，
+      能够快速适配岗位要求，踏实完成各项工作任务。"
+    </blockquote>
+  </div>
+</section>
+
+<!-- ============ 实习经历 ============ -->
+<section id="work" style="background:var(--paper-deep)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="no">02 / EXPERIENCE</span>
+      <h2>实习经历 <span class="en">Internship</span></h2>
+      <p>在杭州默安科技有限公司担任产品技术运营实习生，面向政企客户提供安全产品支撑。</p>
+    </div>
+    <div class="split">
+      <div class="timeline reveal">
+        <div class="t-item">
+          <span class="date">2026.03 — 至今</span>
+          <h4>杭州默安科技有限公司</h4>
+          <span class="role">产品技术运营实习生</span>
+          <ul>
+            <li>参与<strong>医院政企安全项目</strong>，对 <strong>IAST / SCA</strong> 执行月度安全巡检，完成风险核验与<strong>缺陷分级闭环</strong>；</li>
+            <li><strong>护网行动</strong>期间为公安、医院客户提供幻阵平台技术支持，跟进风险处置；</li>
+            <li>负责<strong>漏洞回归与产品功能测试</strong>，记录、复现产品缺陷，输出测试反馈；</li>
+            <li>根据客户业务需求，<strong>开发简易辅助脚本</strong>，提升检测效率。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="reveal" style="transition-delay:.15s">
+        <div class="about-card" style="margin-bottom:20px">
+          <h4>💡 在这段实习中，我沉淀了什么</h4>
+          <p style="margin-top:10px">把"安全检测"翻译成"产品语言"：从客户视角理解业务需求，用巡检数据驱动缺陷闭环；把技术支持做成标准化流程，让风险处置可跟进、可复盘。</p>
+        </div>
+        <div class="about-card">
+          <h4>🎯 与产品运营岗位的契合点</h4>
+          <p style="margin-top:10px">需求梳理 · 问题闭环 · 数据分析 · 文档输出 · 跨方协作——安全行业的严谨训练，让我在运营工作中更懂"规则"与"验证"。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 项目经验 ============ -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="no">03 / PROJECTS</span>
+      <h2>项目经验 <span class="en">Projects</span></h2>
+    </div>
+    <div class="proj-grid">
+      <article class="proj-card reveal" data-idx="01" data-modal="m-xiangtu">
+        <span class="proj-tag tag-solo">独立开发</span>
+        <h4>乡途 · 高校同乡拼车订票系统</h4>
+        <div class="p-date">2026.05 — 2026.06</div>
+        <p>独立调研用户出行诉求，完成需求梳理与业务流程设计；借助 AI 辅助落地系统搭建，输出原型、需求说明等全套项目文档，验证产品方案可行性。</p>
+        <div class="p-foot">
+          <span class="chip">需求调研</span><span class="chip">AI 辅助开发</span><span class="chip">PRD 文档</span>
+        </div>
+        <span class="proj-more">查看项目详情</span>
+      </article>
+      <article class="proj-card reveal" data-idx="02" data-modal="m-yanglao" style="transition-delay:.12s">
+        <span class="proj-tag tag-lead">负责人</span>
+        <h4>养老服务管理系统</h4>
+        <div class="p-date">2025.11 — 2025.12</div>
+        <p>统筹系统部署调试与功能测试，模拟用户验证业务流程、梳理模块逻辑；记录缺陷并编写操作文档与优化方案，推动问题闭环。</p>
+        <div class="p-foot">
+          <span class="chip">功能测试</span><span class="chip">流程梳理</span><span class="chip">操作文档</span>
+        </div>
+        <span class="proj-more">查看项目详情</span>
+      </article>
+      <article class="proj-card reveal" data-idx="03" data-modal="m-guiji" style="transition-delay:.24s">
+        <span class="proj-tag tag-core">负责人 · 获 3 项软著</span>
+        <h4>轨迹安全监护系统</h4>
+        <div class="p-date">2025.04 — 2026.04</div>
+        <p>统筹项目推进与版本管理，负责系统功能测试与安全测试；设计测试用例并执行功能 / 回归测试，记录缺陷至闭环；撰写全套测试文档与结题文档，项目获 3 项计算机软件著作权。</p>
+        <div class="p-foot">
+          <span class="chip">版本管理</span><span class="chip">安全测试</span><span class="chip">结题文档</span>
+        </div>
+        <span class="proj-more">查看项目详情</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 校园与实践 ============ -->
+<section style="background:var(--paper-deep)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="no">04 / CAMPUS & PRACTICE</span>
+      <h2>校园与社会实践 <span class="en">Leadership</span></h2>
+    </div>
+    <div class="split">
+      <div class="timeline reveal">
+        <div class="t-item">
+          <span class="date">2025.09 — 2026.06</span>
+          <h4>组织部部长</h4>
+          <ul>
+            <li>统筹全院团务与主题活动，梳理并优化标准化工作流程；</li>
+            <li>跨部门对接协调资源，跟进项目全流程落地，锻炼需求对齐、进度管控与多方沟通能力。</li>
+          </ul>
+        </div>
+        <div class="t-item">
+          <span class="date">2024.09 — 2025.06</span>
+          <h4>就创部副部长</h4>
+          <ul>
+            <li>牵头策划学科竞赛、双创赛事等活动，完成方案撰写、资源协调、活动宣发；</li>
+            <li>跟进活动落地与效果复盘，积累活动运营与项目推进经验。</li>
+          </ul>
+        </div>
+        <div class="t-item">
+          <span class="date">2023.09 — 至今</span>
+          <h4>班级团支书</h4>
+          <ul>
+            <li>收集、审核各类申报材料，做好信息校验、同步与反馈；</li>
+            <li>持续对接同学需求，做好上传下达，锻炼细致的信息管理与用户沟通能力。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline reveal" style="transition-delay:.15s">
+        <div class="t-item">
+          <span class="date">2026.07</span>
+          <h4>海峡两岸人工智能交流活动 · 志愿者</h4>
+          <ul>
+            <li>协助活动现场引导、会务对接，配合完成交流环节保障工作；</li>
+            <li>担任助理裁判，做好信息同步，积累大型活动协作经验。</li>
+          </ul>
+        </div>
+        <div class="t-item">
+          <span class="date">2025.07 — 2025.08</span>
+          <h4>漳州平和三下乡社会实践</h4>
+          <ul>
+            <li>下乡走访调研，面向乡村群众开展科普宣传；</li>
+            <li>整理调研资料，输出实践总结报告，锻炼调研沟通与内容梳理能力。</li>
+          </ul>
+        </div>
+        <div class="t-item">
+          <span class="date">2024.07</span>
+          <h4>福蕾行动计划夏令营 · 志愿者</h4>
+          <ul>
+            <li>负责课业辅导、趣味课堂授课，陪伴儿童开展活动；</li>
+            <li>配合落实活动流程，做好现场组织与信息记录。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 技能 ============ -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="no">05 / SKILLS</span>
+      <h2>技能证书 <span class="en">Skills</span></h2>
+    </div>
+    <div class="skill-grid">
+      <div class="skill-card reveal">
+        <h4><span class="ic">技</span>专业技能</h4>
+        <div class="bar"><div class="bar-head"><b>Python 基础 / 大模型 Agent 应用搭建</b><span>熟练</span></div><div class="track"><div class="fill" data-w="85%"></div></div></div>
+        <div class="bar"><div class="bar-head"><b>Office 办公套件</b><span>精通</span></div><div class="track"><div class="fill" data-w="95%"></div></div></div>
+        <div class="bar"><div class="bar-head"><b>墨刀（原型） / XMind（思维导图）</b><span>熟练</span></div><div class="track"><div class="fill" data-w="85%"></div></div></div>
+        <div class="bar" style="margin-bottom:0"><div class="bar-head"><b>PS / PR / AU · 图文剪辑与内容创作</b><span>掌握</span></div><div class="track"><div class="fill" data-w="75%"></div></div></div>
+      </div>
+      <div class="skill-card reveal" style="transition-delay:.12s">
+        <h4><span class="ic">能</span>通用能力 & 证书</h4>
+        <div class="bar"><div class="bar-head"><b>需求文档撰写</b><span>熟练</span></div><div class="track"><div class="fill" data-w="90%"></div></div></div>
+        <div class="bar"><div class="bar-head"><b>竞品调研 · 数据分析</b><span>熟练</span></div><div class="track"><div class="fill" data-w="82%"></div></div></div>
+        <div class="bar"><div class="bar-head"><b>项目统筹 · 跨方沟通</b><span>熟练</span></div><div class="track"><div class="fill" data-w="88%"></div></div></div>
+        <h4 style="margin-top:26px"><span class="ic">证</span>证书</h4>
+        <div class="certs">
+          <span class="cert">大学英语四级</span>
+          <span class="cert">C1 驾驶证</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 荣誉 ============ -->
+<section id="honors" style="background:var(--paper-deep)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="no">06 / HONORS</span>
+      <h2>荣誉奖励 <span class="en">Honors</span></h2>
+    </div>
+    <div class="honor-list reveal">
+      <div class="honor"><span class="h-date">2026.05</span><span class="h-name">2025 年度校级优秀共青团干部</span><span class="h-lv lv-school">校级</span></div>
+      <div class="honor"><span class="h-date">2026.04</span><span class="h-name">第九届中国高校智能机器人创意大赛软件系统安全赛 · 华东赛区二等奖</span><span class="h-lv lv-prov">省级</span></div>
+      <div class="honor"><span class="h-date">2025.11</span><span class="h-name">2024 年优秀学生</span><span class="h-lv lv-school">校级</span></div>
+      <div class="honor"><span class="h-date">2025.10</span><span class="h-name">校综合二等奖学金（2024–2025 学年）</span><span class="h-lv lv-school">校级</span></div>
+      <div class="honor"><span class="h-date">2025.06</span><span class="h-name">国家级大学生创新创业训练计划项目立项（项目负责人）</span><span class="h-lv lv-national">国家级</span></div>
+      <div class="honor"><span class="h-date">2025.05</span><span class="h-name">2024 年度校级优秀共青团员</span><span class="h-lv lv-school">校级</span></div>
+      <div class="honor"><span class="h-date">2024.10</span><span class="h-name">中国国际"互联网+"大学生创新创业大赛 · 国家级三等奖</span><span class="h-lv lv-national">国家级</span></div>
+      <div class="honor"><span class="h-date">2024.10</span><span class="h-name">校综合三等奖学金（2023–2024 学年）</span><span class="h-lv lv-school">校级</span></div>
+      <div class="honor"><span class="h-date">2023.12</span><span class="h-name">福建理工大学第三届信息安全大赛优秀奖</span><span class="h-lv lv-school">校级</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 项目详情弹窗 ============ -->
+
+<!-- 乡途 -->
+<div class="modal" id="m-xiangtu" aria-hidden="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-panel">
+    <button class="modal-close" data-close aria-label="关闭">✕</button>
+    <div class="m-kicker">PROJECT 01 · 独立开发</div>
+    <h3>乡途 · 高校同乡拼车订票系统</h3>
+    <div class="m-date">2026.05 — 2026.06 · 产品方案设计 / 系统搭建</div>
+    <div class="m-tags">
+      <span class="badge hot">需求调研</span><span class="badge">业务流程设计</span>
+      <span class="badge">AI 辅助开发</span><span class="badge">原型输出</span><span class="badge">PRD 文档</span>
+    </div>
+
+    <div class="m-block">
+      <h5>项目背景</h5>
+      <p>高校学生节假日返乡普遍存在"购票难、拼车信息散、缺乏信任机制"的痛点。乡途以"同乡"为信任纽带，面向高校学生提供同乡拼车发布、路线匹配与在线订票的一站式服务。</p>
+    </div>
+
+    <div class="m-duo" style="margin-bottom:36px">
+      <div class="m-mini"><div class="mk">项目角色</div><div class="mv">独立开发<em>全流程负责</em></div></div>
+      <div class="m-mini"><div class="mk">核心成果</div><div class="mv">全套项目文档<em>原型 + PRD</em></div></div>
+    </div>
+
+    <div class="m-block">
+      <h5>我做了什么</h5>
+      <ul>
+        <li><strong>独立调研</strong>高校学生出行诉求，完成需求梳理与业务流程设计，绘制用户旅程图；</li>
+        <li>借助 <strong>AI 辅助落地系统搭建</strong>，完成拼车发布、路线检索、在线订票等核心链路；</li>
+        <li>输出<strong>原型、需求说明等全套项目文档</strong>，验证产品方案可行性，形成可交付的产品方案。</li>
+      </ul>
+    </div>
+
+    <div class="m-block">
+      <h5>界面预览 · 真实系统截图</h5>
+      <div class="mock-wrap">
+        <span class="mock-label">乘客端 H5 · 查询班次 / 订票 / 订单 / 我的</span>
+        <div class="shot-row">
+          <div class="shot"><img src="shots/xiangtu/home.png" alt="乡途首页 · 返乡班次查询"><span class="cap">首页 · 班次查询</span></div>
+          <div class="shot"><img src="shots/xiangtu/schedules.png" alt="乡途班次列表"><span class="cap">班次列表</span></div>
+          <div class="shot"><img src="shots/xiangtu/orders.png" alt="乡途我的订单"><span class="cap">我的订单</span></div>
+          <div class="shot"><img src="shots/xiangtu/profile.png" alt="乡途个人中心"><span class="cap">个人中心</span></div>
+        </div>
+      </div>
+      <div class="mock-wrap" style="margin-top:16px">
+        <span class="mock-label">司机端 · 车辆管理工作台（售票统计 / 乘车名单 / 退款单）</span>
+        <div class="shot wide"><img src="shots/xiangtu/admin.png" alt="乡途司机端工作台"></div>
+      </div>
+    </div>
+
+    <div class="m-block" style="margin-bottom:0">
+      <h5>方案价值</h5>
+      <p>以"同乡信任"为切入点降低拼车决策成本，覆盖"拼车 + 订票"双场景；完整的产品文档体系（用户调研 → 业务流程 → 原型 → PRD）为后续开发提供了可直接落地的蓝本。</p>
+    </div>
+  </div>
+</div>
+
+<!-- 养老 -->
+<div class="modal" id="m-yanglao" aria-hidden="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-panel">
+    <button class="modal-close" data-close aria-label="关闭">✕</button>
+    <div class="m-kicker">PROJECT 02 · 项目负责人</div>
+    <h3>养老服务管理系统</h3>
+    <div class="m-date">2025.11 — 2025.12 · 部署调试 / 功能测试 / 文档输出</div>
+    <div class="m-tags">
+      <span class="badge hot">项目统筹</span><span class="badge">Vue 3 + Spring Boot</span>
+      <span class="badge">三端协作</span><span class="badge">部署调试</span>
+      <span class="badge">功能测试</span><span class="badge">操作文档</span><span class="badge">优化方案</span>
+    </div>
+
+    <div class="m-block">
+      <h5>项目背景</h5>
+      <p>面向社区养老场景的信息化服务平台，采用 <strong>Vue 3 + Spring Boot</strong> 前后端分离架构，覆盖<strong>老人端、服务人员端、管理后台</strong>三端：老人可在线下单上门照料 / 陪诊 / 助餐等服务，管理端完成订单受理与派单调度，服务人员端执行任务并支持异常上报，形成完整的服务闭环。</p>
+    </div>
+
+    <div class="m-duo" style="margin-bottom:36px">
+      <div class="m-mini"><div class="mk">项目角色</div><div class="mv">负责人<em>部署 + 测试 + 文档</em></div></div>
+      <div class="m-mini"><div class="mk">核心成果</div><div class="mv">缺陷全闭环<em>操作文档 + 优化方案</em></div></div>
+    </div>
+
+    <div class="m-block">
+      <h5>我做了什么</h5>
+      <ul>
+        <li>统筹<strong>系统部署调试</strong>，模拟真实用户走通老人下单 → 管理员派单 → 服务执行的全业务流程，梳理模块逻辑；</li>
+        <li>设计测试路径覆盖各业务分支，<strong>记录并推动缺陷修复闭环</strong>；</li>
+        <li>编写<strong>操作文档与优化方案</strong>，降低上手成本，推动系统可用性持续改进。</li>
+      </ul>
+    </div>
+
+    <div class="m-block">
+      <h5>界面预览 · 真实系统截图</h5>
+      <div class="mock-wrap">
+        <span class="mock-label">老人端 · 填写需求下单 / 我的订单</span>
+        <div class="shot-row">
+          <div class="shot"><img src="shots/yanglao/elder-form.png" alt="老人端填写需求"><span class="cap">老人端 · 填写需求</span></div>
+          <div class="shot"><img src="shots/yanglao/elder-orders.png" alt="老人端我的订单"><span class="cap">老人端 · 我的订单</span></div>
+        </div>
+      </div>
+      <div class="mock-wrap" style="margin-top:16px">
+        <span class="mock-label">管理后台 · 订单管理（受理 / 派单 / 状态跟踪）</span>
+        <div class="shot wide"><img src="shots/yanglao/admin-orders.png" alt="管理后台订单管理"></div>
+      </div>
+      <div class="mock-wrap" style="margin-top:16px">
+        <span class="mock-label">服务人员端 · 任务详情与异常上报</span>
+        <div class="shot wide"><img src="shots/yanglao/worker-task.png" alt="服务人员任务详情"></div>
+      </div>
+    </div>
+
+    <div class="m-block" style="margin-bottom:0">
+      <h5>项目收获</h5>
+      <p>完整经历"部署 → 验证 → 缺陷闭环 → 文档沉淀"的交付链路，锻炼了以用户视角拆解业务流程、用文档驱动问题闭环的能力。</p>
+    </div>
+  </div>
+</div>
+
+<!-- 轨迹 -->
+<div class="modal" id="m-guiji" aria-hidden="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-panel">
+    <button class="modal-close" data-close aria-label="关闭">✕</button>
+    <div class="m-kicker">PROJECT 03 · 项目负责人 · 获 3 项软著</div>
+    <h3>护铃迹安 · 基于时空差分隐私的轨迹安全监护系统</h3>
+    <div class="m-date">2025.04 — 2026.04 · 版本管理 / 功能与安全测试 / 全套文档</div>
+    <div class="m-tags">
+      <span class="badge hot">3 项软件著作权</span><span class="badge">时空差分隐私</span>
+      <span class="badge">版本管理</span><span class="badge">功能 / 回归测试</span><span class="badge">安全测试</span><span class="badge">结题文档</span>
+    </div>
+
+    <div class="m-block">
+      <h5>项目背景</h5>
+      <p>针对老人、儿童等易走失人群的监护需求，「护铃迹安」（时空隐私守护者）通过终端定位采集轨迹数据，提供<strong>实时位置查询、路径规划、历史轨迹回放</strong>等能力；并引入<strong>时空差分隐私</strong>机制对用户位置进行扰动保护，让"被守护"与"隐私安全"可以兼得。</p>
+    </div>
+
+    <div class="m-duo" style="margin-bottom:36px">
+      <div class="m-mini"><div class="mk">项目角色</div><div class="mv">负责人<em>推进 + 测试</em></div></div>
+      <div class="m-mini"><div class="mk">核心成果</div><div class="mv">3 项软著<em>全套测试 / 结题文档</em></div></div>
+    </div>
+
+    <div class="m-block">
+      <h5>我做了什么</h5>
+      <ul>
+        <li><strong>统筹项目推进与版本管理</strong>，规划迭代节奏，管理需求变更与交付范围；</li>
+        <li>设计<strong>测试用例</strong>并执行功能 / 回归测试，覆盖定位采集、路径规划、隐私扰动等核心链路，记录缺陷直至全部闭环；</li>
+        <li>开展<strong>安全测试</strong>，从网络空间安全专业视角验证轨迹数据在采集、传输、扰动处理各环节的安全性；</li>
+        <li>撰写<strong>全套测试文档与结题文档</strong>，项目最终获 3 项计算机软件著作权。</li>
+      </ul>
+    </div>
+
+    <div class="m-block">
+      <h5>界面预览 · 真实系统截图</h5>
+      <div class="mock-wrap">
+        <span class="mock-label">用户登录 · 时空隐私守护者</span>
+        <div class="shot wide"><img src="shots/huling/login.png" alt="护铃迹安登录页"></div>
+      </div>
+      <div class="mock-wrap" style="margin-top:16px">
+        <span class="mock-label">路径规划 · 支持多档隐私级别（初级 / 中级 / 高级）的位置扰动保护</span>
+        <div class="shot wide"><img src="shots/huling/route.png" alt="护铃迹安路径规划"></div>
+      </div>
+    </div>
+
+    <div class="m-block" style="margin-bottom:0">
+      <h5>项目价值</h5>
+      <p>将专业能力转化为产品成果：以安全测试保障轨迹数据全链路可信，以规范化文档支撑项目顺利结题——是技术严谨性与项目推动力的结合。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 联系 ============ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact reveal">
+      <h2>期待与你<em>相遇</em>。</h2>
+      <p>如果你正在寻找一位严谨务实、兼具技术理解力与运营执行力的小伙伴，欢迎随时联系我。</p>
+      <div class="c-links">
+        <a class="c-link" href="mailto:2817626024@qq.com">✉️ <b>2817626024@qq.com</b></a>
+        <a class="c-link" href="tel:15759726519">📞 <b>157 5972 6519</b></a>
+        <span class="c-link">📍 福建 · 福州</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>陈梦琪</span> · 产品运营 · © 2026 · 严谨务实，踏实前行
+</footer>
+
+<script>
+// 导航滚动效果
+const nav = document.getElementById('nav');
+addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', scrollY > 40);
+}, { passive: true });
+
+// reveal 滚动入场
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// 技能条动画
+const barIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const fill = e.target.querySelector('.fill');
+      if (fill) fill.style.width = fill.dataset.w;
+      barIO.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.4 });
+document.querySelectorAll('.skill-card').forEach(el => barIO.observe(el));
+
+// 项目详情弹窗
+document.querySelectorAll('[data-modal]').forEach(card => {
+  card.addEventListener('click', () => {
+    const m = document.getElementById(card.dataset.modal);
+    if (!m) return;
+    m.classList.add('open');
+    m.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+    m.querySelector('.modal-panel').scrollTop = 0;
+  });
+});
+document.querySelectorAll('.modal').forEach(m => {
+  m.querySelectorAll('[data-close]').forEach(el => {
+    el.addEventListener('click', () => {
+      m.classList.remove('open');
+      m.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-open');
+    });
+  });
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal.open').forEach(m => {
+      m.classList.remove('open');
+      m.setAttribute('aria-hidden', 'true');
+    });
+    document.body.classList.remove('modal-open');
+  }
+});
+</script>
+</body>
+</html>
